@@ -18,14 +18,14 @@ STS (Semantic Textual Similarity) 는 자연어 처리 분야에서 두 개의 �
 
 ### 팀 이름
 
-**I들의 모임**
+**I들의 모임** $\leftarrow$ MBTI I 로만 구성된 남자들의 모임
 
 ### 팀원 소개
 
 | 이름                                                         | 역할                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 서동해 [Github](https://github.com/DonghaeSuh)               | Baseline 코드 작성, 데이터 분석 및 시각화, 데이터 전처리, 데이터 증강, Loss 실험, 앙상블 실험, 예측결과 시각화 |
-| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) |                                                              |
+| 서동해 [Github](https://github.com/DonghaeSuh)               | Baseline 코드 작성, 데이터 분석 및 시각화, 데이터 전처리 실험, 데이터 증강 실험, Loss 실험, 결합 모델 실험 (Cosine similarity), 앙상블 실험, 예측결과 시각화 및 분석 |
+| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) | 모델 실험, Baseline 코드 작성, refactoring 및 기능추가, 데이터 증강 실험, Loss 실험, Regularization 적용, 앙상블, 예측결과 시각화 및 분석 |
 | 이상경 [Github]()                                            |                                                              |
 | 김재현 [Github]()                                            |                                                              |
 | 송민환 [Github]()                                            |                                                              |
@@ -37,7 +37,7 @@ STS (Semantic Textual Similarity) 는 자연어 처리 분야에서 두 개의 �
 
 | 항목          | 내용                                                         |
 | ------------- | ------------------------------------------------------------ |
-| Hardware      | 1. GPU instance: Intel(R) Xeon(R) CPU (`lscpu`) + 88GB RAM (`free -h`) + Tesla V100 32GB VRAM <br />2. PC: RTX4060ti, RTX4080 |
+| Hardware      | 1. GPU instance: Intel(R) Xeon(R) CPU + 88GB RAM + Tesla V100 32GB VRAM <br />2. PC: RTX4060ti, RTX4080 |
 | OS            | 1. Ubuntu 20.04.6 LTS<br />2. Windows 11                     |
 | Software      | Python 3.10.x , CUDA 11.4+                                   |
 | Collaboration | Github (코드), Notion (실험 결과), Zoom (회의)               |
@@ -54,23 +54,16 @@ train/dev/test 데이터셋 및 Huggingface 의 pre-trained 된 모델을 불러
 
 #### 1. Pre-trained model selection
 
-- [**snunlp/KR-ELECTRA-discriminator**](https://huggingface.co/snunlp/KR-ELECTRA-discriminator) 
+|                             모델                             |                             목록                             |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| [**snunlp/KR-ELECTRA-discriminator**](https://huggingface.co/snunlp/KR-ELECTRA-discriminator) | [klue/roberta-large](https://huggingface.co/klue/roberta-large) |
+| [xlm-roberta-large](https://huggingface.co/xlm-roberta-large) | [beomi/KcELECTRA-base](https://huggingface.co/beomi/KcELECTRA-base) |
+| [snunlp/KR-SBERT-V40K-klueNLI-augSTS](https://huggingface.co/snunlp/KR-SBERT-V40K-klueNLI-augSTS) | [monologg/koelectra-base-discriminator](https://huggingface.co/monologg/koelectra-base-discriminator) |
+| [kakaobank/kf-deberta-base](https://huggingface.co/kakaobank/kf-deberta-base) | [BM-K/KoSimCSE-roberta-multitask](https://huggingface.co/BM-K/KoSimCSE-roberta-multitask) |
 
-  >  단일 모델로는 가장 성능이 잘 나온 모델로써, 다양한 실험의 기준 모델로 활용됨
+snunlp/KR-ELECTRA-discriminator
 
-- [klue/roberta-large](https://huggingface.co/klue/roberta-large)
-
-- [xlm-roberta-large](https://huggingface.co/xlm-roberta-large)
-
-- [beomi/KcELECTRA-base](https://huggingface.co/beomi/KcELECTRA-base)
-
-- [snunlp/KR-SBERT-V40K-klueNLI-augSTS](https://huggingface.co/snunlp/KR-SBERT-V40K-klueNLI-augSTS)
-
-- [monologg/koelectra-base-discriminator](https://huggingface.co/monologg/koelectra-base-discriminator)
-
-- [kakaobank/kf-deberta-base](https://huggingface.co/kakaobank/kf-deberta-base)
-
-- [BM-K/KoSimCSE-roberta-multitask](https://huggingface.co/BM-K/KoSimCSE-roberta-multitask)
+>  단일 모델로는 가장 성능이 잘 나온 모델로써, 다양한 실험의 기준 모델로 활용됨
 
 #### 2. Kfold cross-validation
 
@@ -164,11 +157,17 @@ train/dev/test 데이터셋 및 Huggingface 의 pre-trained 된 모델을 불러
 
 > 더 해볼수 있었던 실험 목록
 
-1. 
+1. 데이터를 작게 샘플링해서 다양한 가설을 미리 검증하기 (작은 데이터에서 증명되지 않는 가정은 전체 데이터를 가지고 해도 성립되지 않는다.)
+
+2. 동일한 세팅에서 최소 5번 정도는 Seed 를 바꿔서 실행해 보아햐 한다.
+
+3. **데이터가 충분히 많을 경우** hierarchical classification 을 시도해볼만 하다.
 
 
 
 ## Manual
+
+> 특별히 코드를 건드리지 않고 바로바로 실험할수 있게 하는것을 목표로 하였습니다.
 
 ### Directory Listing
 
@@ -283,7 +282,7 @@ level1-semantictextsimilarity-nlp-02
 ### Inference
 
 > ```
-> python run.py --infence {--best} {--test}
+> python run.py --inference {--best} {--test}
 > ```
 
 - `--best` 옵션 설정하신 경우 가장 성능이 좋았던 모델을 기준으로 inference
@@ -322,3 +321,5 @@ level1-semantictextsimilarity-nlp-02
   - 계산된 결과는 `./test_output` 에 `ensemble` 폴더 내부에 저장 됩니다. (기존의 모델 저자 폴더 e.g. `snunlp`, `klue` etc.)
   
 - `--test` 를 하지 않으실경우 기존 inference 와 동일하게 prediction data 를 읽어와서 각 row 에맞는 예측값을 계산하여, concat 한 후, `./output` 의 `ensemble` 폴더 내부에  `csv` 형태로 저장합니다.
+
+**EOF** 
