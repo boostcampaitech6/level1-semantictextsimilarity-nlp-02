@@ -22,14 +22,14 @@ STS (Semantic Textual Similarity) 는 자연어 처리 분야에서 두 개의 �
 
 ### 팀원 소개
 
-| 이름                                                         | 역할                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 서동해 [Github](https://github.com/DonghaeSuh)               | Baseline 코드 작성, 데이터 분석 및 시각화, 데이터 전처리 실험, 데이터 증강 실험, Loss 실험, 결합 모델 실험 (Cosine similarity), 앙상블 실험, 예측결과 시각화 및 분석 |
-| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) | 모델 실험, Baseline 코드 작성, refactoring 및 기능추가, 데이터 증강 실험, Loss 실험, Regularization 적용, 앙상블, 예측결과 시각화 및 분석 |
-| 이상경 [Github]()                                            |                                                              |
-| 김재현 [Github]()                                            |                                                              |
-| 송민환 [Github]()                                            |                                                              |
-| 조병률 [Github]()                                            |                                                              |
+| 이름                                                         | 사진                                               | 역할                                                         |
+| ------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------ |
+| 서동해 [Github](https://github.com/DonghaeSuh)               | <img src="./assets/suh_T6077.png" width="200px">   | Baseline 코드 작성, 데이터 분석 및 시각화, 데이터 전처리 실험, 데이터 증강 실험, Loss 실험, 결합 모델 실험 (Cosine similarity), 앙상블 실험, 예측결과 시각화 및 분석 |
+| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) | <img src="./assets/hwang_T6193.png" width="200px"> | 모델 실험, Baseline 코드 작성, refactoring 및 기능추가, 데이터 증강 실험, Loss 실험, Regularization 적용, 앙상블, 예측결과 시각화 및 분석 |
+| 이상경 [Github]()                                            | <img src="./assets/lee_T6121.jpg" width="200px">   |                                                              |
+| 김재현 [Github]()                                            | <img src="./assets/kim_T6036.png" width="200px">   |                                                              |
+| 송민환 [Github]()                                            | <img src="./assets/song_T6086.jpg" width="200px">  |                                                              |
+| 조병률 [Github]()                                            | <img src="./assets/cho_T6163.jpg" width="200px">   |                                                              |
 
 ## 프로젝트 설명
 
