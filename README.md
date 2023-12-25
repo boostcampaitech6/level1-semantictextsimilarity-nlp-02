@@ -22,14 +22,14 @@ STS (Semantic Textual Similarity) 는 자연어 처리 분야에서 두 개의 �
 
 ### 팀원 소개
 
-| 이름                                                         | 역할 |
-| ------------------------------------------------------------ | ---- |
-| 김재현 [Github]()                                            |      |
-| 서동해 [Github](https://github.com/DonghaeSuh)               |      |
-| 송민환 [Github]()                                            |      |
-| 이상경 [Github]()                                            |      |
-| 조병률 [Github]()                                            |      |
-| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) |      |
+| 이름                                                         | 역할                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 서동해 [Github](https://github.com/DonghaeSuh)               | Baseline 코드 작성, 데이터 분석 및 시각화, 데이터 전처리, 데이터 증강, Loss 실험, 앙상블 실험, 예측결과 시각화 |
+| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) |                                                              |
+| 이상경 [Github]()                                            |                                                              |
+| 김재현 [Github]()                                            |                                                              |
+| 송민환 [Github]()                                            |                                                              |
+| 조병률 [Github]()                                            |                                                              |
 
 ## 프로젝트 설명
 
@@ -151,15 +151,14 @@ train/dev/test 데이터셋 및 Huggingface 의 pre-trained 된 모델을 불러
 
 ##### 모델 목록
 
-| 이름 | learning_rate | batch_size | val_pearson | submission |
-| ---- | ------------- | ---------- | ----------- | ---------- |
-|      |               |            |             |            |
-|      |               |            |             |            |
-|      |               |            |             |            |
-|      |               |            |             |            |
-|      |               |            |             |            |
+| 이름                                  | learning_rate | batch_size | val_pearson | submission |
+| ------------------------------------- | ------------- | ---------- | ----------- | ---------- |
+| snunlp/KR-ELECTRA-discriminator       | 1e-5          | 32         |             |            |
+| xlm-roberta-large                     | 1e-5          | 8          |             |            |
+| monologg/koelectra-base-discriminator | 1e-5          | 32         |             |            |
+| klue/roberta-large                    | 1e-5          | 8          |             |            |
 
-**최종결과: ** public: 0.9329 (4th) $\rightarrow$ private: 0.9386 (5th)
+**최종결과:** *public:* 0.9329 (4th) $\rightarrow$ *private:* 0.9386 (5th)
 
 #### 7. Further studies
 
@@ -319,7 +318,7 @@ level1-semantictextsimilarity-nlp-02
   - test dataset 에 GT 와 각 모델 별 + 앙상블 결과를 각각 비교하여 evaluation metric 값을 계산하고, 산점도를 출력합니다.
     - 산점도는 `./plots` 폴더가 자동 생성되며 내부에 `plot_models_{생성일자}_{생성시간}.png` 형태로 저장됩니다.
 - 예시 plot
-  <img src="./assets/plot_models_20231219_074631.png" width="600px" height="600px"/>
+  <img src="./plots/plot_models_20231225_081242.png" width="600px" height="600px"/>
   - 계산된 결과는 `./test_output` 에 `ensemble` 폴더 내부에 저장 됩니다. (기존의 모델 저자 폴더 e.g. `snunlp`, `klue` etc.)
   
 - `--test` 를 하지 않으실경우 기존 inference 와 동일하게 prediction data 를 읽어와서 각 row 에맞는 예측값을 계산하여, concat 한 후, `./output` 의 `ensemble` 폴더 내부에  `csv` 형태로 저장합니다.
