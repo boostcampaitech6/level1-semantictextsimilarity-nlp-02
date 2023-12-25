@@ -29,7 +29,7 @@ STS (Semantic Textual Similarity) 는 자연어 처리 분야에서 두 개의 �
 | 이상경 [Github]()                                               | <img src="./assets/lee_T6121.jpg" width="200px">   | 모델 실험, Baseline 코드 작성, 데이터 시각화 및 데이터 분석, 데이터 전처리, 앙상블, 예측결과 시각화 및 분석                                                          |
 | 김재현 [Github]()                                               | <img src="./assets/kim_T6036.png" width="200px">   |                                                                                                                                                                      |
 | 송민환 [Github]()                                               | <img src="./assets/song_T6086.jpg" width="200px">  |                                                                                                                                                                      |
-| 조병률 [Github]()                                               | <img src="./assets/cho_T6163.jpg" width="200px">   |                                                                                                                                                                      |
+| 조병률 [Github](https://github.com/joryool)                     | <img src="./assets/cho_T6163.jpg" width="200px">   |   모델 실험, 데이터 증강 실험, 앙상블 실험, 예측결과 분석                                                                                                                                                                   |
 
 ## 프로젝트 설명
 
