@@ -8,10 +8,10 @@ STS (Semantic Textual Similarity) 는 자연어 처리 분야에서 두 개의 �
 
 ### 대회 정보
 
-| 항목     | 내용                                                         |
-| -------- | ------------------------------------------------------------ |
-| 주최     | Naver Boostcamp AI Tech                                      |
-| 일정     | 2023년 12월 13일 ~ 2023년 12월 21일                          |
+| 항목     | 내용                                                                                                                                     |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 주최     | Naver Boostcamp AI Tech                                                                                                                  |
+| 일정     | 2023년 12월 13일 ~ 2023년 12월 21일                                                                                                      |
 | 평가방식 | STS 데이터셋을 활용해 두 문장의 유사도를 측정하는 AI모델을 구축하여, 비공개 test 데이터셋 에대해 가장 높은 pearson 값을 도달한 팀이 우승 |
 
 ## 팀 정보
@@ -22,25 +22,25 @@ STS (Semantic Textual Similarity) 는 자연어 처리 분야에서 두 개의 �
 
 ### 팀원 소개
 
-| 이름                                                         | 사진                                               | 역할                                                         |
-| ------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------ |
-| 서동해 [Github](https://github.com/DonghaeSuh)               | <img src="./assets/suh_T6077.png" width="200px">   | Baseline 코드 작성, 데이터 분석 및 시각화, 데이터 전처리 실험, 데이터 증강 실험, Loss 실험, 결합 모델 실험 (Cosine similarity), 앙상블 실험, 예측결과 시각화 및 분석 |
-| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) | <img src="./assets/hwang_T6193.png" width="200px"> | 모델 실험, Baseline 코드 작성, refactoring 및 기능추가, 데이터 증강 실험, Loss 실험, Regularization 적용, 앙상블, 예측결과 시각화 및 분석 |
-| 이상경 [Github]()                                            | <img src="./assets/lee_T6121.jpg" width="200px">   |                                                              |
-| 김재현 [Github]()                                            | <img src="./assets/kim_T6036.png" width="200px">   |                                                              |
-| 송민환 [Github]()                                            | <img src="./assets/song_T6086.jpg" width="200px">  |                                                              |
-| 조병률 [Github]()                                            | <img src="./assets/cho_T6163.jpg" width="200px">   |                                                              |
+| 이름                                                            | 사진                                               | 역할                                                                                                                                                                 |
+| --------------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 서동해 [Github](https://github.com/DonghaeSuh)                  | <img src="./assets/suh_T6077.png" width="200px">   | Baseline 코드 작성, 데이터 분석 및 시각화, 데이터 전처리 실험, 데이터 증강 실험, Loss 실험, 결합 모델 실험 (Cosine similarity), 앙상블 실험, 예측결과 시각화 및 분석 |
+| 황재훈 [Github](https://github.com/iloveonsen?tab=repositories) | <img src="./assets/hwang_T6193.png" width="200px"> | 모델 실험, Baseline 코드 작성, refactoring 및 기능추가, 데이터 증강 실험, Loss 실험, Regularization 적용, 앙상블, 예측결과 시각화 및 분석                            |
+| 이상경 [Github]()                                               | <img src="./assets/lee_T6121.jpg" width="200px">   | 모델 실험, Baseline 코드 작성, 데이터 시각화 및 데이터 분석, 데이터 전처리, 앙상블, 예측결과 시각화 및 분석                                                          |
+| 김재현 [Github]()                                               | <img src="./assets/kim_T6036.png" width="200px">   |                                                                                                                                                                      |
+| 송민환 [Github]()                                               | <img src="./assets/song_T6086.jpg" width="200px">  |                                                                                                                                                                      |
+| 조병률 [Github]()                                               | <img src="./assets/cho_T6163.jpg" width="200px">   |                                                                                                                                                                      |
 
 ## 프로젝트 설명
 
 ### 개발 환경
 
-| 항목          | 내용                                                         |
-| ------------- | ------------------------------------------------------------ |
+| 항목          | 내용                                                                                                    |
+| ------------- | ------------------------------------------------------------------------------------------------------- |
 | Hardware      | 1. GPU instance: Intel(R) Xeon(R) CPU + 88GB RAM + Tesla V100 32GB VRAM <br />2. PC: RTX4060ti, RTX4080 |
-| OS            | 1. Ubuntu 20.04.6 LTS<br />2. Windows 11                     |
-| Software      | Python 3.10.x , CUDA 11.4+                                   |
-| Collaboration | Github (코드), Notion (실험 결과), Zoom (회의)               |
+| OS            | 1. Ubuntu 20.04.6 LTS<br />2. Windows 11                                                                |
+| Software      | Python 3.10.x , CUDA 11.4+                                                                              |
+| Collaboration | Github (코드), Notion (실험 결과), Zoom (회의)                                                          |
 
 ### Baseline
 
@@ -54,16 +54,16 @@ train/dev/test 데이터셋 및 Huggingface 의 pre-trained 된 모델을 불러
 
 #### 1. Pre-trained model selection
 
-|                             모델                             |                             목록                             |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-| [**snunlp/KR-ELECTRA-discriminator**](https://huggingface.co/snunlp/KR-ELECTRA-discriminator) | [klue/roberta-large](https://huggingface.co/klue/roberta-large) |
-| [xlm-roberta-large](https://huggingface.co/xlm-roberta-large) | [beomi/KcELECTRA-base](https://huggingface.co/beomi/KcELECTRA-base) |
+|                                               모델                                                |                                                 목록                                                  |
+| :-----------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
+|   [**snunlp/KR-ELECTRA-discriminator**](https://huggingface.co/snunlp/KR-ELECTRA-discriminator)   |                    [klue/roberta-large](https://huggingface.co/klue/roberta-large)                    |
+|                   [xlm-roberta-large](https://huggingface.co/xlm-roberta-large)                   |                  [beomi/KcELECTRA-base](https://huggingface.co/beomi/KcELECTRA-base)                  |
 | [snunlp/KR-SBERT-V40K-klueNLI-augSTS](https://huggingface.co/snunlp/KR-SBERT-V40K-klueNLI-augSTS) | [monologg/koelectra-base-discriminator](https://huggingface.co/monologg/koelectra-base-discriminator) |
-| [kakaobank/kf-deberta-base](https://huggingface.co/kakaobank/kf-deberta-base) | [BM-K/KoSimCSE-roberta-multitask](https://huggingface.co/BM-K/KoSimCSE-roberta-multitask) |
+|           [kakaobank/kf-deberta-base](https://huggingface.co/kakaobank/kf-deberta-base)           |       [BM-K/KoSimCSE-roberta-multitask](https://huggingface.co/BM-K/KoSimCSE-roberta-multitask)       |
 
 snunlp/KR-ELECTRA-discriminator
 
->  단일 모델로는 가장 성능이 잘 나온 모델로써, 다양한 실험의 기준 모델로 활용됨
+> 단일 모델로는 가장 성능이 잘 나온 모델로써, 다양한 실험의 기준 모델로 활용됨
 
 #### 2. Kfold cross-validation
 
@@ -79,7 +79,7 @@ snunlp/KR-ELECTRA-discriminator
 
 ##### ~~특수문자 간소화 및 제거~~
 
-- `~~~~~` 나 `!!!!!` 등 특수문자가 여러번 지속되어 나타나는 경우, 특정 숫자까지 줄이거나  (`!!!!!` $\rightarrow$ `!!`) 삭제
+- `~~~~~` 나 `!!!!!` 등 특수문자가 여러번 지속되어 나타나는 경우, 특정 숫자까지 줄이거나 (`!!!!!` $\rightarrow$ `!!`) 삭제
 - 성능이 오히려 데이터가 오히려 정보를 잃었다고 판단 $\rightarrow$ 폐기
 
 ##### ~~예측 결과를 0~5 범위내로 들어오도록 강제 scaling~~
@@ -93,7 +93,7 @@ snunlp/KR-ELECTRA-discriminator
 
 - 모델에 input 을 넣을때 문장1과 문장2를 하나의 시퀀스로 concat 해서 넣기 때문에, 모델이 순서 정보를 그대로 학습할 가능성이 존재
 - concat 할때 문장2를 처음에 오도록 하여 기존의 순서를 swap
--  기존 데이터 + swap 한 데이터를 붙여서 학습하되 swap 데이터 비율을 조정 (전체, label 0 제외, 10% 샘플링 등)
+- 기존 데이터 + swap 한 데이터를 붙여서 학습하되 swap 데이터 비율을 조정 (전체, label 0 제외, 10% 샘플링 등)
 - 기존 데이터만 사용했을때에 비해 특정 loss (train, valid 포함) 수준까지 더 빠르게 수렴함
   - `snunlp/KR-ELECTRA-discriminator`, `lr=1e-5`, `batch_size=32`, `loss_fn=L1Loss()` 일때, `val_loss` 가 0.15 까지 수렴하는데 걸리는 시간:
   - 기존 데이터 5 epoch 이상 $\rightarrow$ swap 데이터 3 epoch 이내
@@ -110,19 +110,19 @@ snunlp/KR-ELECTRA-discriminator
 ##### SmoothL1Loss
 
 - 기존 baseline 에 있었던 `L1Loss` 이외에 `MSELoss`, `HuberLoss`, `SmoothL1Loss` 에 대해 학습, 여러개의 loss 를 평균내는 방식또한 학습
-- 다른 조건이 동일한 경우,  `SmoothL1Loss` 를 단독으로 썼을때 가장 `val_loss` 값이 낮아지는 것으로 확인
+- 다른 조건이 동일한 경우, `SmoothL1Loss` 를 단독으로 썼을때 가장 `val_loss` 값이 낮아지는 것으로 확인
 
 ##### Dropout
 
 - 기존 `AutoModelForSequenceClassification` 대신에, `AutoModel` 에다 dropout 을 적용한 regression head 를 붙여서 학습
-- `val_pearson` 값은 기존 classifier 모델에 비해 약간 떨어지지만,  제출점수는 미미하게 상승함 (0.001~0.002)
+- `val_pearson` 값은 기존 classifier 모델에 비해 약간 떨어지지만, 제출점수는 미미하게 상승함 (0.001~0.002)
 
 ##### ~~RDrop~~
 
 - 모델에 dropout 레이어가 포함된경우, 매 iteration 마다 dropout 되는 노드들이 달라도, 일관된 결과를 유지할수 있도록 기존 loss 에 penalty 를 부여한 것
 - 매 step 마다 forward pass 를 두번 거쳐야 하므로 시간및 step 이 두배 더 필요
 - 제출 결과 예측시, 기존에 label 5 이상으로 예측되던 분포가 label 4 를 기준으로 몰려드는 모습을 보여줌
-- 사용하지 않았을때 대비 validation 및 제출 score 에서 유의미한 상승을 보이지 못해서 배제 했으나,  이후 private score 에서 약 0.009 가량 점수가 상승하는 모습을 보여줌
+- 사용하지 않았을때 대비 validation 및 제출 score 에서 유의미한 상승을 보이지 못해서 배제 했으나, 이후 private score 에서 약 0.009 가량 점수가 상승하는 모습을 보여줌
 
 ##### LR Scheduler
 
@@ -151,7 +151,7 @@ snunlp/KR-ELECTRA-discriminator
 | monologg/koelectra-base-discriminator | 1e-5          | 32         |             |            |
 | klue/roberta-large                    | 1e-5          | 8          |             |            |
 
-**최종결과:** *public:* 0.9329 (4th) $\rightarrow$ *private:* 0.9386 (5th)
+**최종결과:** _public:_ 0.9329 (4th) $\rightarrow$ _private:_ 0.9386 (5th)
 
 #### 7. Further studies
 
@@ -162,8 +162,6 @@ snunlp/KR-ELECTRA-discriminator
 2. 동일한 세팅에서 최소 5번 정도는 Seed 를 바꿔서 실행해 보아햐 한다.
 
 3. **데이터가 충분히 많을 경우** hierarchical classification 을 시도해볼만 하다.
-
-
 
 ## Manual
 
@@ -196,14 +194,14 @@ level1-semantictextsimilarity-nlp-02
  ┃ ┣ klue
  ┃ ┃ ┗ roberta-large_
  ┃ ┗ ensemble
- ┃   ┗ 0_KR-ELECTRA-discriminator_1_roberta-large_... 
+ ┃   ┗ 0_KR-ELECTRA-discriminator_1_roberta-large_...
  ┣ outputs
  ┃ ┣ snunlp
  ┃ ┃ ┗ KR-ELECTRA-discriminator_
  ┃ ┣ klue
  ┃ ┃ ┗ roberta-large_
  ┃ ┗ ensemble
- ┃   ┗ 0_KR-ELECTRA-discriminator_1_roberta-large_... 
+ ┃   ┗ 0_KR-ELECTRA-discriminator_1_roberta-large_...
  ┣ callbacks.py
  ┣ data_module.py
  ┣ models.py
@@ -230,29 +228,30 @@ level1-semantictextsimilarity-nlp-02
 
 ```json
 {
-    "seed": 1784,
-    "inference": false,
-    "best": false,
-    "test": false,
-    "wandb_project_name": "<your-wandb-project-name>",
-    "wandb_username": "<your-wandb-user-name>",
-    "model_name": ["klue/roberta-base", "klue/roberta-small"],
-    "model_detail": ["v", "v"],
-    "batch_size": [16, 32, 64],
-    "max_epoch": [5, 10, 15],
-    "shuffle": true,
-    "learning_rate": [1e-5, 5e-5],
-    "kfold": 5,
-    "data_dir": "./data",
-    "test_output_dir": "./test_outputs",
-    "output_dir": "./outputs",
-    "model_dir": "./saves",
-    "train_path": "train.csv",
-    "dev_path": "dev.csv",
-    "test_path": "dev.csv",
-    "predict_path": "test.csv"
+  "seed": 1784,
+  "inference": false,
+  "best": false,
+  "test": false,
+  "wandb_project_name": "<your-wandb-project-name>",
+  "wandb_username": "<your-wandb-user-name>",
+  "model_name": ["klue/roberta-base", "klue/roberta-small"],
+  "model_detail": ["v", "v"],
+  "batch_size": [16, 32, 64],
+  "max_epoch": [5, 10, 15],
+  "shuffle": true,
+  "learning_rate": [1e-5, 5e-5],
+  "kfold": 5,
+  "data_dir": "./data",
+  "test_output_dir": "./test_outputs",
+  "output_dir": "./outputs",
+  "model_dir": "./saves",
+  "train_path": "train.csv",
+  "dev_path": "dev.csv",
+  "test_path": "dev.csv",
+  "predict_path": "test.csv"
 }
 ```
+
 - `data` 폴더 내부에 `train.csv`, `dev.csv`, `test.csv`, `sample_submission.csv` 를 넣어놔주세요.
 - `model_name` 의 list 에 원하는 모델을 추가가능합니다.
 - `model_detail` 의 경우 `model_name` 와 같은 인덱스에 대응해야 합니다.
@@ -266,6 +265,7 @@ level1-semantictextsimilarity-nlp-02
 > ```
 
 모델 저장은 `./saves/` 내부에 저장됩니다.
+
 - 저장 path 는 `./saves/klue/roberta-small_v03_16_1_1e-05_000_00583_0.862_20231214_221830.ckpt`형식 이며
 - 이름 `roberta-small_v03_16_1_1e-05_000_00583_0.862_20231214_221830` 은
   - `roberta-small`: 모델명
@@ -277,7 +277,7 @@ level1-semantictextsimilarity-nlp-02
   - `000`: current_epoch
   - `00583`: current_step
   - `0.862`: pearson value
-  - `20231214_221830`: current_date _ current_time
+  - `20231214_221830`: current*date * current_time
 
 ### Inference
 
@@ -291,8 +291,8 @@ level1-semantictextsimilarity-nlp-02
   - 출력의 경우 `test_output_dir` 내부에 모델 author (snunlp, klue, etc.) 별로 폴더를 만들어 저장합니다.
   - 파일명은 위의 모델 이름에서 person value 값을 예측값으로 부터 새로 계산하고, 현재 시간을 반영한 상태로 저장됩니다.
 
-
 결과는 `./outputs/` 에 저장됩니다.
+
 - `data` 폴더 내부의 `sample_submission.py` 에서 input 을 읽어오며,
 - 형태는 `{위의 모델 체크포인트 이름}.csv` 의 형태로 저장됩니다.
 
@@ -303,15 +303,17 @@ level1-semantictextsimilarity-nlp-02
 > ```
 
 앙상블을 하기위해서는 미리 `./ensembles` 디렉토리를 준비해주셔야합니다.
+
 - 디렉토리를 만드신후 앙상블 하고 싶으신 모델 체크포인트를 직접 모델제작자 (snunlp, klue etc.) 폴더 내에 복사해 주세요.
 
 폴더 구조
+
 - ensembles
   - 모델제작자
     - 모델이름.ckpt
 
-
 방식
+
 - `--test` 일 경우, test dataset 을 불러와서 `ensembles` 내에 저장된 각각의 모델을 불러와서 예측값을 계산합니다.
   - 모델별 예측결과를 concat후 softmax 를 거쳐 가중합을 계산합니다.
   - test dataset 에 GT 와 각 모델 별 + 앙상블 결과를 각각 비교하여 evaluation metric 값을 계산하고, 산점도를 출력합니다.
@@ -319,7 +321,6 @@ level1-semantictextsimilarity-nlp-02
 - 예시 plot
   <img src="./plots/plot_models_20231225_081242.png" width="600px" height="600px"/>
   - 계산된 결과는 `./test_output` 에 `ensemble` 폴더 내부에 저장 됩니다. (기존의 모델 저자 폴더 e.g. `snunlp`, `klue` etc.)
-  
-- `--test` 를 하지 않으실경우 기존 inference 와 동일하게 prediction data 를 읽어와서 각 row 에맞는 예측값을 계산하여, concat 한 후, `./output` 의 `ensemble` 폴더 내부에  `csv` 형태로 저장합니다.
+- `--test` 를 하지 않으실경우 기존 inference 와 동일하게 prediction data 를 읽어와서 각 row 에맞는 예측값을 계산하여, concat 한 후, `./output` 의 `ensemble` 폴더 내부에 `csv` 형태로 저장합니다.
 
-**EOF** 
+**EOF**
