@@ -144,12 +144,13 @@ snunlp/KR-ELECTRA-discriminator
 
 ##### 모델 목록
 
-| 이름                                  | learning_rate | batch_size | val_pearson | submission |
-| ------------------------------------- | ------------- | ---------- | ----------- | ---------- |
-| snunlp/KR-ELECTRA-discriminator       | 1e-5          | 32         |             |            |
-| xlm-roberta-large                     | 1e-5          | 8          |             |            |
-| monologg/koelectra-base-discriminator | 1e-5          | 32         |             |            |
-| klue/roberta-large                    | 1e-5          | 8          |             |            |
+| 이름                                | 특징                              | Pearson |
+| ----------------------------------- | --------------------------------- | ------- |
+| klue/roberta-large (1)              | batch 16, L1loss                  | 0.9257  |
+| klue/roberta-large (2)              | random sampling, swap             | 0.9151  |
+| snunlp/KR-ELECTRA-discriminator (1) | special token, stopwords          | 0.9178  |
+| snunlp/KR-ELECTRA-discriminator (2) | seed 443, batch 32                | 0.9270  |
+| snunlp/KR-ELECTRA-discriminator (3) | smooth L1 loss, reduce on plateau | 0.9311  |
 
 **최종결과:** _public:_ 0.9329 (4th) $\rightarrow$ _private:_ 0.9386 (5th)
 
