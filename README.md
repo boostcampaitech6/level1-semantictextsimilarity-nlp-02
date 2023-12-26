@@ -93,11 +93,13 @@ snunlp/KR-ELECTRA-discriminator
 
 - 모델에 input 을 넣을때 문장1과 문장2를 하나의 시퀀스로 concat 해서 넣기 때문에, 모델이 순서 정보를 그대로 학습할 가능성이 존재
 - concat 할때 문장2를 처음에 오도록 하여 기존의 순서를 swap
-- 기존 데이터 + swap 한 데이터를 붙여서 학습하되 swap 데이터 비율을 조정 (전체, label 0 제외, 10% 샘플링 등)
-- 기존 데이터만 사용했을때에 비해 특정 loss (train, valid 포함) 수준까지 더 빠르게 수렴함
+  - (1) 기존 데이터 + swap 한 데이터를 붙여서 학습하되 swap 데이터 비율을 조정 (전체, label 0 제외, 10% 샘플링 등)
+  - (2) train의 모든 sentence 쌍을 swap한 것을 train 데이터에 추가
+- (1) 기존 데이터만 사용했을때에 비해 특정 loss (train, valid 포함) 수준까지 더 빠르게 수렴함
   - `snunlp/KR-ELECTRA-discriminator`, `lr=1e-5`, `batch_size=32`, `loss_fn=L1Loss()` 일때, `val_loss` 가 0.15 까지 수렴하는데 걸리는 시간:
   - 기존 데이터 5 epoch 이상 $\rightarrow$ swap 데이터 3 epoch 이내
-- 그러나, 특정 step 에서 수렴 한후 loss 가 더 떨어지지 않고 오히려 divergence 가 발생함으로써, 빠르게 과적합되는 경우가 지속적으로 관찰됨
+  - 그러나, 특정 step 에서 수렴 한후 loss 가 더 떨어지지 않고 오히려 divergence 가 발생함으로써, 빠르게 과적합되는 경우가 지속적으로 관찰됨
+- (2) 기존 데이터만 사용했을 때에 비해 약간의 성능 향상을 얻을 수 있었음
 
 ##### ~~Back-translation~~
 
