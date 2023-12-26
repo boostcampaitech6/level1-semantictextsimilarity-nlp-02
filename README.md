@@ -89,7 +89,7 @@ snunlp/KR-ELECTRA-discriminator
 
 #### 4. Data augmentation
 
-##### ~~Sentence swap~~
+##### Sentence swap
 
 - 모델에 input 을 넣을때 문장1과 문장2를 하나의 시퀀스로 concat 해서 넣기 때문에, 모델이 순서 정보를 그대로 학습할 가능성이 존재
 - concat 할때 문장2를 처음에 오도록 하여 기존의 순서를 swap
